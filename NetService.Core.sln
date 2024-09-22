@@ -3,9 +3,81 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F146924C-C361-4009-A8F3-0F8314ED95FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{F935A315-6133-4493-BB47-2BD86A1DADFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7AFA6702-1027-407D-9F2C-F4C279FBB95E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "todo", "todo", "{71ABC68D-54CD-448A-A0E9-7CD0E68F46D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.WebApi.App", "samples\todo\TodoApp.WebApi.App\TodoApp.WebApi.App.csproj", "{C94A40B3-E739-4C8F-A240-7662F403152A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.AppHost", "samples\todo\TodoApp.AppHost\TodoApp.AppHost.csproj", "{C1B2584A-AA16-435B-B15C-CE0A05682933}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.ServiceDefaults", "samples\todo\TodoApp.ServiceDefaults\TodoApp.ServiceDefaults.csproj", "{9E6ABF1A-2075-45A8-8BA6-DB05ED9A84BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.AdminApp", "samples\todo\TodoApp.AdminApp\TodoApp.AdminApp.csproj", "{B3BCD5EE-0715-4A63-B8AB-DC0728D34DBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domain", "domain", "{3687FA7C-21D5-47EF-A6D6-4EF90522402F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "application", "application", "{EFBAE85B-40B9-4991-BDB8-78E363EF28ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presenters", "presenters", "{93DA630A-D41A-4E55-99B4-82EF1D7EE6B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateways", "gateways", "{B4014ECD-54BA-41FE-A8A4-20D24A478965}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{D7B0C49E-0C85-4687-ACDD-D74406653DD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{07DD9C86-32A1-450F-A407-0B02E1629310}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{870E6449-B719-4A89-9C4C-6094ADAD953A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C94A40B3-E739-4C8F-A240-7662F403152A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C94A40B3-E739-4C8F-A240-7662F403152A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C94A40B3-E739-4C8F-A240-7662F403152A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C94A40B3-E739-4C8F-A240-7662F403152A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1B2584A-AA16-435B-B15C-CE0A05682933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B2584A-AA16-435B-B15C-CE0A05682933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1B2584A-AA16-435B-B15C-CE0A05682933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1B2584A-AA16-435B-B15C-CE0A05682933}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E6ABF1A-2075-45A8-8BA6-DB05ED9A84BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E6ABF1A-2075-45A8-8BA6-DB05ED9A84BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E6ABF1A-2075-45A8-8BA6-DB05ED9A84BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E6ABF1A-2075-45A8-8BA6-DB05ED9A84BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3BCD5EE-0715-4A63-B8AB-DC0728D34DBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3BCD5EE-0715-4A63-B8AB-DC0728D34DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3BCD5EE-0715-4A63-B8AB-DC0728D34DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3BCD5EE-0715-4A63-B8AB-DC0728D34DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{71ABC68D-54CD-448A-A0E9-7CD0E68F46D5} = {F935A315-6133-4493-BB47-2BD86A1DADFC}
+		{C94A40B3-E739-4C8F-A240-7662F403152A} = {71ABC68D-54CD-448A-A0E9-7CD0E68F46D5}
+		{C1B2584A-AA16-435B-B15C-CE0A05682933} = {71ABC68D-54CD-448A-A0E9-7CD0E68F46D5}
+		{9E6ABF1A-2075-45A8-8BA6-DB05ED9A84BB} = {71ABC68D-54CD-448A-A0E9-7CD0E68F46D5}
+		{B3BCD5EE-0715-4A63-B8AB-DC0728D34DBB} = {71ABC68D-54CD-448A-A0E9-7CD0E68F46D5}
+		{3687FA7C-21D5-47EF-A6D6-4EF90522402F} = {71ABC68D-54CD-448A-A0E9-7CD0E68F46D5}
+		{EFBAE85B-40B9-4991-BDB8-78E363EF28ED} = {71ABC68D-54CD-448A-A0E9-7CD0E68F46D5}
+		{93DA630A-D41A-4E55-99B4-82EF1D7EE6B7} = {71ABC68D-54CD-448A-A0E9-7CD0E68F46D5}
+		{B4014ECD-54BA-41FE-A8A4-20D24A478965} = {71ABC68D-54CD-448A-A0E9-7CD0E68F46D5}
+		{D7B0C49E-0C85-4687-ACDD-D74406653DD4} = {71ABC68D-54CD-448A-A0E9-7CD0E68F46D5}
+		{07DD9C86-32A1-450F-A407-0B02E1629310} = {71ABC68D-54CD-448A-A0E9-7CD0E68F46D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {331A3563-3DE0-43F8-AFFC-0E033FCC56FA}
