@@ -1,0 +1,45 @@
+﻿@page
+@model TodoApp.WebApi.App.Pages.IndexModel
+@{
+}
+<html>
+<head>
+    <title>TodoApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+    <style>
+        dl {
+            display: grid;
+            grid-template-columns: auto 1fr;
+        }
+    </style>
+</head>
+<body>
+<h1>Todo App Web APIs</h1>
+
+@foreach (var endpoint in Model.Endpoints)
+{
+    <h4>
+        @if (endpoint.Enabled)
+        {
+            <span>✅</span>
+        }
+        else
+        {
+            <span>❌</span>
+        }
+        @endpoint.Label
+    </h4>
+    @if (endpoint.Enabled)
+    {
+        <dl>
+            @foreach (var url in endpoint.Urls)
+            {
+                <dt>@url.Label</dt>
+                <dd><a href="@url.Url">@url.GetUrlLabel()</a></dd>
+            }
+        </dl>
+    }
+}
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\presenters\NetService.Presenters.RestApis\NetService.Presenters.RestApis.csproj" />
+    <ProjectReference Include="..\..\application\TodoApp.Application\TodoApp.Application.csproj" />
+  </ItemGroup>
+
+</Project>

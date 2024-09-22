@@ -13,7 +13,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.10.0" />
+    <PackageReference Include="Marten" Version="7.28.0" />
+    <PackageReference Include="Oakton" Version="6.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
+    <PackageReference Include="WolverineFx" Version="2.17.2" />
+    <PackageReference Include="WolverineFx.FluentValidation" Version="2.17.2" />
+    <PackageReference Include="WolverineFx.Marten" Version="2.17.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\src\presenters\NetService.Presenters.RestApis\NetService.Presenters.RestApis.csproj" />
+    <ProjectReference Include="..\presenters\TodoApp.Presenters.RestApis\TodoApp.Presenters.RestApis.csproj" />
     <ProjectReference Include="..\TodoApp.ServiceDefaults\TodoApp.ServiceDefaults.csproj" />
   </ItemGroup>
 
