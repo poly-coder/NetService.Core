@@ -16,28 +16,19 @@ public static class NetServicePresentersRestApisExtensions
         this IHostApplicationBuilder builder,
         AddRestApisOptions? apisOptions = null)
     {
-        var section = builder.Configuration
-            .GetSection(RestApiOptions.SectionName);
+        var controllers = builder.Services.AddControllers();
 
-        builder.Services.Configure<RestApiOptions>(section);
-
-        var options = section.Get<RestApiOptions>()!;
-
-        if (options.Enabled)
+        if (apisOptions?.Parts is { } parts)
         {
-            var controllers = builder.Services.AddControllers();
-
-            if (apisOptions?.Parts is { } parts)
+            foreach (var partType in parts)
             {
-                foreach (var partType in parts)
-                {
-                    controllers.AddApplicationPart(partType);
-                }
+                controllers.AddApplicationPart(partType);
             }
+        }
 
-            builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddEndpointsApiExplorer();
 
-            builder.Services.AddSwaggerGen(genOptions =>
+        builder.Services.AddSwaggerGen(genOptions =>
             {
                 if (apisOptions?.Parts is { } parts)
                 {
@@ -52,7 +43,6 @@ public static class NetServicePresentersRestApisExtensions
                     }
                 }
             });
-        }
 
         return builder;
     }
@@ -60,19 +50,13 @@ public static class NetServicePresentersRestApisExtensions
     public static WebApplication UseRestApis(
         this WebApplication app)
     {
-        var options = app.Services
-            .GetRequiredService<IOptions<RestApiOptions>>().Value;
-
-        if (options.Enabled)
+        if (app.Environment.IsDevelopment())
         {
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.MapControllers();
+            app.UseSwagger();
+            app.UseSwaggerUI();
         }
+
+        app.MapControllers();
 
         return app;
     }

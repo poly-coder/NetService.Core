@@ -5,10 +5,8 @@ using NetService.Presenters.RestApis;
 
 namespace TodoApp.WebApi.App.Pages;
 
-public class IndexModel(IOptions<RestApiOptions> restApi) : PageModel
+public class IndexModel() : PageModel
 {
-    public RestApiOptions RestApi { get; } = restApi.Value;
-    
     public IEnumerable<EndpointModel> Endpoints { get; set; } = [];
 
     public void OnGet()
@@ -17,7 +15,7 @@ public class IndexModel(IOptions<RestApiOptions> restApi) : PageModel
         [
             new EndpointModel
             {
-                Enabled = RestApi.Enabled,
+                Enabled = true,
                 Label = "REST APIs",
                 Urls =
                 [
@@ -25,24 +23,24 @@ public class IndexModel(IOptions<RestApiOptions> restApi) : PageModel
                     new EndpointUrlModel("Open API JSON", "/swagger/v1/swagger.json")
                 ]
             },
-            new EndpointModel
-            {
-                Enabled = false,
-                Label = "gRPC APIs",
-                Urls =
-                [
-                    new EndpointUrlModel("gRPC Reflection", "/grpc/reflection")
-                ]
-            },
-            new EndpointModel
-            {
-                Enabled = false,
-                Label = "Messaging APIs",
-                Urls =
-                [
-                    new EndpointUrlModel("RabbitMQ Management", "/rabbitmq")
-                ]
-            },
+            //new EndpointModel
+            //{
+            //    Enabled = false,
+            //    Label = "gRPC APIs",
+            //    Urls =
+            //    [
+            //        new EndpointUrlModel("gRPC Reflection", "/grpc/reflection")
+            //    ]
+            //},
+            //new EndpointModel
+            //{
+            //    Enabled = false,
+            //    Label = "Messaging APIs",
+            //    Urls =
+            //    [
+            //        new EndpointUrlModel("RabbitMQ Management", "/rabbitmq")
+            //    ]
+            //},
             new EndpointModel
             {
                 Enabled = true,

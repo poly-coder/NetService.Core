@@ -46,7 +46,7 @@ builder.Services
     .UseLightweightSessions()
     .OptimizeArtifactWorkflow()
     .ApplyAllDatabaseChangesOnStartup()
-    .IntegrateWithWolverine("wolverine");
+    .IntegrateWithWolverine();
 
 builder.Host.UseWolverine(options =>
 {
